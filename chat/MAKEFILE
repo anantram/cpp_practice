@@ -1,0 +1,17 @@
+CC = g++
+CF = -std=c++11
+
+all: thread client
+
+thread : thread.o
+	$(CC) -o thread thread.o -lws2_32 $(CF)
+
+client : client.o
+	$(CC) -o client client.o -lws2_32 $(CF)
+
+
+thread.o: thread.cpp
+    $(CC) -c thread.cpp $(CF)
+
+client.o: client.cpp
+    $(CC) -c client.cpp $(CF)
